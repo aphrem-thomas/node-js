@@ -7,7 +7,7 @@ const HOST = '0.0.0.0';
 // App
 const app = Express();
 app.get('/', (req:Express.Request, res:Express.Response) => {
-  res.send('Hello World');
+  res.send('Howdi partner');
 });
 
 app.listen(PORT, HOST, () => {
