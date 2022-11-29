@@ -1,0 +1,37 @@
+.todoName{
+    border: 1px solid #020303;
+    border-radius: 5px;
+    width: 400px;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.todoDate{
+    border: 1px solid #020303;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    margin-left: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.addButton{
+    all:unset;
+    background-color: #2b57ee;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #2b57ee;
+    border-radius: 5px;
+    color: #FFF;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.addTodo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+}

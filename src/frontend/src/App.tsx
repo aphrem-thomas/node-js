@@ -1,24 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import TodoComponent from './components/Todo';
+import {useDispatch, useSelector} from 'react-redux'
+interface statetype {
+  count:number
+}
 function App() {
+  // const [count, setCount] = useState(0);
+  const count = useSelector((state:statetype)=>state.count)
+  const dispatch = useDispatch();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <div className="App_todo_header">Todos</div>
+     <TodoComponent/>
     </div>
   );
 }
