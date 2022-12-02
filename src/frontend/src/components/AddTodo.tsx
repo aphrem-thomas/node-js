@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {add} from '../slices/todoSlices';
+import {add, postTodo} from '../slices/todoSlices';
 import styles from './AddTodo.module.css'
+import type { AppDispatch } from '../store';
 
 function AddTodo(){
     const [todoItem, setTodoItem] = useState('');
     const [todoDate, setTodoDate] = useState('');
-    const dispatch = useDispatch();
+    const dispatch = useDispatch<AppDispatch>();
 
     const addToTodo = ()=>{
-        dispatch(add({todo:todoItem,date:todoDate}));
+        dispatch(postTodo({todo:todoItem, done:false, date:todoDate}));
         setTodoDate('');
         setTodoItem('');
     }

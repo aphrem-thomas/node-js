@@ -1,8 +1,16 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
 type stateType = {
     todo:string,
+    done:boolean,
+    date:string
+}
+
+type returnStateType = {
+    id:string,
+    todo:string,
+    done:boolean,
     date:string
 }
 type actionType = {
@@ -15,14 +23,34 @@ type actionType = {
 
 const initialState:stateType[]= [];
 
+export const postTodo = createAsyncThunk(
+    'postTodo',
+    async (todo:stateType, thunkApi) => {
+        try {
+            const response = await fetch('127.0.0.1:8080', {
+                method: 'POST',
+                body: JSON.stringify(todo)
+            })
+            return response.json();
+        } catch{
+
+        }
+    }
+)
 
 export const todoSlice = createSlice({
     name:'todo',
     initialState,
     reducers:{
         add:(state, action:PayloadAction<stateType>)=>{
+
             state.push(action.payload)
         }
+    },
+    extraReducers: (builder)=>{
+        builder.addCase(postTodo.fulfilled, (state, action)=>{
+            state.push(JSON.parse(action.payload.data.toString()))
+        })
     }
 });
 
