@@ -6,8 +6,11 @@ function TodoList(){
     return(
         <div className={styles.main}>
             {todos.map((todo)=>{
-                return (<div>
-                    <span>{todo.todo}</span><span>{todo.date}</span>
+                return (
+                <div className={styles.todo}>
+                    <span className = {styles.todoName}>{todo.todo}</span>
+                    <span className = {styles.todoDate}>{todo.date}</span>
+                    <span className = {styles.doneCheck}><input type="checkbox"/></span>
                 </div>);
             })}
         </div>

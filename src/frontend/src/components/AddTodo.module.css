@@ -1,5 +1,5 @@
 .todoName{
-    border: 1px solid #020303;
+    border: .5px solid #020303;
     border-radius: 5px;
     width: 400px;
     height: 30px;
@@ -8,7 +8,7 @@
 }
 
 .todoDate{
-    border: 1px solid #020303;
+    border: .5px solid #020303;
     border-radius: 5px;
     width: 100px;
     height: 30px;

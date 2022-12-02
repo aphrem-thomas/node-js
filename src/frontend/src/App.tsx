@@ -12,7 +12,6 @@ function App() {
   const dispatch = useDispatch();
   return (
     <div className="App">
-     <div className="App_todo_header">Todos</div>
      <TodoComponent/>
     </div>
   );

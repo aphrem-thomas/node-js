@@ -1,5 +1,26 @@
 .main{
     width: 100%;
-    border: 1px solid black;
-    height: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+}
+
+.todo{
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+}
+
+.todoName{
+    width: 400px;
+    text-align: left;
+}
+
+.todoDate{
+    width: 100px;
+}
+
+.doneCheck{
+    width: 100px;
 }
