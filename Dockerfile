@@ -1,12 +1,12 @@
-FROM node:16
+FROM node:16-alpine
 
 WORKDIR /usr/src/app
 COPY package*.json ./
 
 RUN npm install
 
-COPY . .
+COPY ./build .
 
 EXPOSE 8080
 
-CMD [ "nodemon", "src/server.js" ]
+CMD [ "node", "server.js" ]
