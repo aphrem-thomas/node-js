@@ -27,8 +27,12 @@ export const postTodo = createAsyncThunk(
     'postTodo',
     async (todo:stateType, thunkApi) => {
         try {
-            const response = await fetch('127.0.0.1:8080', {
+            const response = await fetch('todo/', {
                 method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                  },
                 body: JSON.stringify(todo)
             })
             return response.json();

@@ -7,4 +7,8 @@ router.get('/todos',(req:Express.Request, res:Express.Response, next: Express.Ne
     res.send("hi these are todos")
 })
 
+router.post('/todo',(req:Express.Request, res:Express.Response, next:Express.NextFunction)=>{
+    console.log("request is", req.body);
+})
+
 export default router;
